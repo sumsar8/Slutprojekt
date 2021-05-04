@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.lang.Math;
+
 public class Kalkylator{
     public static void main(String[] args){
         System.out.println("Enter first and second number:");
@@ -6,7 +8,7 @@ public class Kalkylator{
         int int1,int2,whichcalculation;
         int1 = inp.nextInt();
         int2 = inp.nextInt();
-        System.out.println("Type 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division.");
+        System.out.println("Type 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division, 5 for pythagoras");
         whichcalculation = inp.nextInt();
         switch (whichcalculation) {
             case 1:
@@ -20,6 +22,9 @@ public class Kalkylator{
                 break;
             case 4:
                 System.out.println(division( int1,int2));
+                break;
+            case 5:
+                System.out.println(pythagoras( int1,int2));
                 break;
         }
 
@@ -40,6 +45,11 @@ public class Kalkylator{
     }
     public static int division(int int1, int int2) {
         int answer = int1 / int2;
+        return answer;
+    }
+    public static double pythagoras(int int1, int int2){
+        int pythagorascalc = int1 * int1 + int2 *int2;
+        double answer = Math.sqrt(pythagorascalc);
         return answer;
     }
 }
