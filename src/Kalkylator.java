@@ -1,16 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 import java.lang.Math;
 
 public class Kalkylator{
 
     public static class Swinglayout{
-        JFrame frame = new JFrame("Kalkylator");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JFrame f;
         Swinglayout(){
             f=new JFrame();
+            JFrame frame = new JFrame("Kalkylator");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            final JTextField tfformeltext = new JTextField();
+            tfformeltext.setBounds(50,50, 100,20);
+
+            final JTextField tf = new JTextField();
+            tf.setBounds(50,100, 100,20);
 
             JButton Addition = new JButton("Addition");
             JButton Subtraktion = new JButton("Subtraktion");
@@ -19,9 +27,19 @@ public class Kalkylator{
             JButton Pythagoras = new JButton("Pythagoras");
             JButton Derivata = new JButton("Derivata");
 
+            Addition.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                f.add(tfformeltext);
+                tfformeltext.setText("a + b = c");
+                f.add(tf);
+                tf.setText("tasasd");
+
+
+                    }
+                });
             f.add(Addition);f.add(Subtraktion);f.add(Multiplikation);f.add(Division);f.add(Pythagoras);f.add(Derivata);
 
-            f.setLayout(new FlowLayout(FlowLayout.RIGHT));
+            f.setLayout(new FlowLayout(FlowLayout.LEFT));
             //setting flow layout of right alignment
 
             f.setSize(1920,1080);
