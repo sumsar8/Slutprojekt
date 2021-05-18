@@ -1,8 +1,36 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
 import java.lang.Math;
 
 public class Kalkylator{
+
+    public static class Swinglayout{
+        JFrame frame = new JFrame("Kalkylator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JFrame f;
+        Swinglayout(){
+            f=new JFrame();
+
+            JButton Addition = new JButton("Addition");
+            JButton Subtraktion = new JButton("Subtraktion");
+            JButton Multiplikation = new JButton("Multiplikation");
+            JButton Division = new JButton("Division");
+            JButton Pythagoras = new JButton("Pythagoras");
+            JButton Derivata = new JButton("Derivata");
+
+            f.add(Addition);f.add(Subtraktion);f.add(Multiplikation);f.add(Division);f.add(Pythagoras);f.add(Derivata);
+
+            f.setLayout(new FlowLayout(FlowLayout.RIGHT));
+            //setting flow layout of right alignment
+
+            f.setSize(1920,1080);
+            f.setVisible(true);
+    }
+
+        }
     public static void main(String[] args){
+        new Swinglayout();
         //Declarar mina ints.
         int int1=0,int2=0,whichcalculation,derivata1=0,derivata2=0;
         String x,upphöj;
