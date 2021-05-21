@@ -44,8 +44,24 @@ public class Kalkylator{
                 tfa.setText("Write your a here");
                 tfb.setText("Write your b here");
                 tfans.setText("Your answer appear here");
+                Calculate.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
 
+                        int answer = calculateaddition();
+                        tfans.setText( answer);
 
+                    }
+
+                    private int calculateaddition() {
+                        String stringa = tfa.getText();
+                        String stringb = tfb.getText();
+                        int a = Integer. parseInt(stringa);
+                        int b = Integer. parseInt(stringb);
+
+                        int answer = a + b;
+                        return answer;
+                    }
+                });
                     }
                 });
             f.add(Addition);f.add(Subtraktion);f.add(Multiplikation);f.add(Division);f.add(Pythagoras);f.add(Derivata);
@@ -55,6 +71,7 @@ public class Kalkylator{
 
             f.setSize(1920,1080);
             f.setVisible(true);
+
     }
 
         }
@@ -105,6 +122,7 @@ public class Kalkylator{
 
 
     }
+
     //Alla uträkningar.
     public static int addition(int int1, int int2) {
         int answer = int1 + int2;
