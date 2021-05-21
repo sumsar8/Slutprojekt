@@ -14,11 +14,17 @@ public class Kalkylator{
             JFrame frame = new JFrame("Kalkylator");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            final JTextField tfformeltext = new JTextField();
-            tfformeltext.setBounds(50,50, 100,20);
+            final JTextField tfformel = new JTextField();
+            final JTextField tfa = new JTextField();
+            final JTextField tfb = new JTextField();
+            final JTextField tfans = new JTextField();
 
-            final JTextField tf = new JTextField();
-            tf.setBounds(50,100, 100,20);
+            tfans.setEditable(false);
+            tfformel.setEditable(false);
+            tfformel.setBounds(50,50, 100,20);
+            tfa.setBounds(50,100, 100,20);
+            tfb.setBounds(170,100, 100,20);
+            tfans.setBounds(50,150,200,20);
 
             JButton Addition = new JButton("Addition");
             JButton Subtraktion = new JButton("Subtraktion");
@@ -26,13 +32,18 @@ public class Kalkylator{
             JButton Division = new JButton("Division");
             JButton Pythagoras = new JButton("Pythagoras");
             JButton Derivata = new JButton("Derivata");
+            JButton Calculate = new JButton("Calculate");
 
             Addition.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                f.add(tfformeltext);
-                tfformeltext.setText("a + b = c");
-                f.add(tf);
-                tf.setText("tasasd");
+                f.add(tfformel);
+                f.add(tfa);
+                f.add(tfb);
+                f.add(tfans);
+                tfformel.setText("a + b = c");
+                tfa.setText("Write your a here");
+                tfb.setText("Write your b here");
+                tfans.setText("Your answer appear here");
 
 
                     }
@@ -40,7 +51,7 @@ public class Kalkylator{
             f.add(Addition);f.add(Subtraktion);f.add(Multiplikation);f.add(Division);f.add(Pythagoras);f.add(Derivata);
 
             f.setLayout(new FlowLayout(FlowLayout.LEFT));
-            //setting flow layout of right alignment
+            f.add(Calculate);
 
             f.setSize(1920,1080);
             f.setVisible(true);
