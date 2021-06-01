@@ -13,7 +13,7 @@ public class Kalkylator{
             f=new JFrame();
             JFrame frame = new JFrame("Kalkylator");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+            //skapar Jframe med knappar
             final JTextField tfformel = new JTextField();
             final JTextField tfa = new JTextField();
             final JTextField tfb = new JTextField();
@@ -33,7 +33,7 @@ public class Kalkylator{
             JButton Pythagoras = new JButton("Pythagoras");
             JButton Derivata = new JButton("Derivata");
             JButton Calculate = new JButton("Calculate");
-
+            //en actionlistener som märker av när man klickar på additionsknappen
             Addition.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 f.add(tfformel);
@@ -44,14 +44,15 @@ public class Kalkylator{
                 tfa.setText("Write your a here");
                 tfb.setText("Write your b here");
                 tfans.setText("Your answer appear here");
+                //actionlistener som märker av när man trycker på calculate och sedan räknar ut additionen.
                 Calculate.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
 
                         int answer = calculateaddition();
-                        tfans.setText( answer);
+                        tfans.setText(String.valueOf(answer));
 
                     }
-
+                    //räknar ut addition i ui.
                     private int calculateaddition() {
                         String stringa = tfa.getText();
                         String stringb = tfb.getText();
@@ -76,6 +77,7 @@ public class Kalkylator{
 
         }
     public static void main(String[] args){
+        //drar igång layouten
         new Swinglayout();
         //Declarar mina ints.
         int int1=0,int2=0,whichcalculation,derivata1=0,derivata2=0;
